@@ -12,6 +12,18 @@ const darkColorsArr = [
 ];
 
 function getRandomIndex() {
-    console.log(Math.floor(darkColorsArr.length * Math.random()))
+    console.log(Math.floor(darkColorsArr.length * Math.random()));
+    const randomIndex = Math.floor(darkColorsArr.length * Math.random());
+    return randomIndex;
+  }
+
+const body = document.querySelector("body");
+const bgHexCodeSpanElement = document.querySelector("#bg-hex-code");
+
+function changeBackgroundColor() {
+    const color = darkColorsArr[getRandomIndex()];
+  
+    bgHexCodeSpanElement.innerText = color;
+    body.style.backgroundColor = color;
 }
-getRandomIndex();
+const btn = document.querySelector("#btn");
